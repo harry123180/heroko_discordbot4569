@@ -34,6 +34,7 @@ async def on_message(message):
         if content == '':# 如果用戶只@機器人 而不說話 content 內容為空
             content = first+"白癡 請說話" #
             print(content)
+            await message.reply(content) 
         if translator.detect(content).lang == DSTLanguage:
             return
         if translator.detect(content).lang == SRCLanguage or SRCLanguage == '':
