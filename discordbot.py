@@ -32,7 +32,8 @@ async def on_message(message):
         first, space, content = message.clean_content.partition('@'+robotName+' ')
         print(first,space, content)
         if content == '':# 如果用戶只@機器人 而不說話 content 內容為空
-            content = first+str("白癡 請說話") #
+            content = first+"白癡 請說話" #
+            print(content)
         if translator.detect(content).lang == DSTLanguage:
             return
         if translator.detect(content).lang == SRCLanguage or SRCLanguage == '':
