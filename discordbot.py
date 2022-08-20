@@ -2,13 +2,18 @@ import discord
 import googletrans
 import os
 from pprint import pprint
+
+
 # 輸入自己Bot的TOKEN碼
 TOKEN = os.environ['TOKEN']
 SRCLanguage=os.environ['SRC']
 DSTLanguage=os.environ['DST']
+#int 整數
+#float 浮點數 
+#string 字串
 
 client = discord.Client(intents=discord.Intents.default())
-
+#test
 # 起動時呼叫
 @client.event
 async def on_ready():
@@ -25,7 +30,7 @@ async def on_message(message):
         translator = googletrans.Translator()
         robotName = client.user.name
         first, space, content = message.clean_content.partition('@'+robotName+' ')
-        
+        print(first,space, content)
         if content == '':
             content = first
         if translator.detect(content).lang == DSTLanguage:
