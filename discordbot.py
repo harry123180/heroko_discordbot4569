@@ -7,7 +7,7 @@ TOKEN = os.environ['TOKEN']
 SRCLanguage=os.environ['SRC']
 DSTLanguage=os.environ['DST']
 
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.default())
 
 # 起動時呼叫
 @client.event
